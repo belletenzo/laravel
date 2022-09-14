@@ -1,3 +1,7 @@
+@include('header')
+
 <html>
-<p>Homepage</p>
+<h1 class="text-center">Homepage</h1>
 </html>
+
+@include('footer')

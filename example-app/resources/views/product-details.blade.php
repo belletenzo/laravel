@@ -1,5 +1,9 @@
+@include('header')
+
 <html>
 <body>
-<p>Fiche du produit {{ $id }}</p>
+<h1>Fiche du produit {{ $id }}</h1>
 </body>
 </html>
+
+@include('footer')
