@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,30 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'show']);
 
-Route::get('/product', function () {
-    return "Listes des produits";
-});
+Route::get('/product', [ProductController::class, 'productList']);
 
-Route::get('/product/{id}', function ($id) {
-    return "Fiche du produit ".$id;
-});
+Route::get('/product/{id}', [ProductController::class, 'detailedProduct']);
 
-<<<<<<< HEAD
 Route::get('/cart', [CartController::class, 'displayCart']);
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
-Route::get('/cart', function () {
-    return "Panier";
-});
->>>>>>> parent of a83fcf0 (Creation des controllers)

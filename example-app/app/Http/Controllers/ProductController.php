@@ -10,6 +10,6 @@ class ProductController extends Controller
     }
 
     public function detailedProduct($id){
-        return view("product-details", ['number' => $id] );
+        return view("product-details", ['id' => $id] );
     }
 }
