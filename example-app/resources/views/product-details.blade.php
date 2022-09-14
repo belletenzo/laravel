@@ -1,5 +1,5 @@
 <html>
 <body>
-<p>Fiche du produit {{ $id }}</p>
+<p>Fiche du produit {{ $number }}</p>
 </body>
 </html>
