@@ -1,9 +1,8 @@
-@include('header')
-
 <html>
-<body>
+@extends('layout')
+@section('title', 'Article')
+@section('content')
 <h1>Fiche du produit {{ $id }}</h1>
-</body>
+@endsection
 </html>
 
-@include('footer')

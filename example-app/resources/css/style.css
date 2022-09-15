@@ -4,8 +4,8 @@
     padding: 0;
 }
 
-.wallpaper {
-    background-image: url(resources/images/vinyl-1595847_1920.jpg);
+#wallpaper {
+    background-image: url("https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;

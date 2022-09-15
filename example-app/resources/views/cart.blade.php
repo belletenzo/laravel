@@ -1,5 +1,7 @@
 <html>
-<body>
+@extends('layout')
+@section('title', 'Votre Panier')
+@section('content')
 <p>Panier</p>
-</body>
+@endsection
 </html>
