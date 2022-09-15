@@ -1,4 +1,4 @@
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,7 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     @show
 </head>
+<body>
 @include('includes.header')
 <div>
     @yield('content')
@@ -19,4 +20,5 @@
 @section('footer')
     @include('includes.footer')
 @show
+</body>
 </html>

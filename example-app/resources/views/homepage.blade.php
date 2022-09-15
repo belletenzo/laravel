@@ -1,6 +1,3 @@
-
-
-<html>
 @extends('layout')
 @section('title', 'Home')
 @section('content')
@@ -12,5 +9,4 @@
     </p>
 </div>
 @endsection
-</html>
 
