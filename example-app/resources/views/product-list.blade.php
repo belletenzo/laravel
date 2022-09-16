@@ -1,9 +1,13 @@
 @extends('layout')
 @section('title', 'Listes des articles')
 @section('content')
-@dump($products);
+
 
 <div class="container-fluid w-75 mt-4">
+    <a href="productname" class=" btn btn-dk btn-secondary">Trier par nom</a>
+    <a href="productascprice" class=" btn btn-dk btn-secondary">Trier par prix croissant</a>
+    <a href="product" class=" btn btn-dk btn-secondary">Par défaut</a>
+
     <div class="row">
         @foreach($products as $product)
         <div class="col-lg-3 col-md-6 col-sm-6">

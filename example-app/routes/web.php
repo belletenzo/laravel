@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'show']);
 
 Route::get('/product', [ProductController::class, 'productList']);
+Route::get('/productname', [ProductController::class, 'productListOrderByName']);
+Route::get('/productascprice', [ProductController::class, 'productListOrderByAscPrice']);
 
 Route::get('/product/{id}', [ProductController::class, 'detailedProduct']);
-
 Route::get('/cart', [CartController::class, 'displayCart']);
 
 

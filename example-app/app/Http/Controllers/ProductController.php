@@ -3,17 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
 
     public function productList(){
-        $products = DB::select('select * from products');
+
+        $products = Product::all();
+        return view('product-list',['products' => $products]);
+    }
+
+    public function productListOrderByName(){
+
+        $products = Product::orderBy('name')->get();
+        return view('product-list',['products' => $products]);
+    }
+
+    public function productListOrderByAscPrice(){
+
+        $products = Product::orderBy('price','asc')->get();
         return view('product-list',['products' => $products]);
     }
 
     public function detailedProduct($id){
-        $productById = DB::table('products')->where('id', '=', $id) ->get();
+
+        $productById = Product::all()->where('id','=', $id);
+        $productById = $productById[0];
+
         return view("product-details", compact('productById'));
     }
+
 }
