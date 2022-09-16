@@ -1,9 +1,8 @@
 @extends('layout')
 @section('title', 'Listes des articles')
 @section('content')
-@php
-dump($products);
-@endphp
+@dump($products);
+
 <div class="container-fluid w-75 mt-4">
     <div class="row">
         @foreach($products as $product)
@@ -15,8 +14,7 @@ dump($products);
                             <h3>{{$product->name}}</h3>
                             <p>Prix : {{$product->price}} €</p>
                             <p>Promo : {{$product->discount}}%</p>
-                            <input type="number" name="quantity" value="0" min="0" max="{{$product->quantity}}">
-                            <a href="product/{id}/" class=" btn btn-dk btn-secondary">Voir l'article</a>
+                            <a href="product/{{$product->id}}/" class=" btn btn-dk btn-secondary">Voir l'article</a>
                         </form>
                     </div>
                 </div>
