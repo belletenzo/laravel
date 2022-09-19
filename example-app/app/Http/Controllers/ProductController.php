@@ -28,9 +28,8 @@ class ProductController extends Controller
 
     public function detailedProduct($id){
 
-        $productById = Product::all()->where('id','=', $id);
-        $productById = $productById[0];
-
+        $productById = Product::find($id);
+//        $productById = Product::all()->where('id','=',$id);
         return view("product-details", compact('productById'));
     }
 
