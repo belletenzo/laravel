@@ -5,7 +5,7 @@
             <h2 class="panel-title">Modifier un article</h2>
         </div>
         <div class="panel-body">
-            <form class="" action="{{url('/backoffice/edit/'. $product->id)}}" method="POST">
+            <form class="" action="/backoffice/edit/{{$product->id}}" method="POST">
                 {{ csrf_field() }}
                 @method('PUT')
                 <div class="form-group">

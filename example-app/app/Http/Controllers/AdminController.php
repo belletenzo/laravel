@@ -62,7 +62,7 @@ class AdminController extends Controller
         $product->quantity = $request->input('quantity');
         $product->discount = $request->input('discount');
         $product->update();
-        return redirect('/backoffice/edit/{id}');
+        return redirect('/backoffice');
     }
 
 
