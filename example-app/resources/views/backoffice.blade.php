@@ -6,14 +6,16 @@
 
         @foreach($products as $product)
             <div class="product">
-                <form action="cart" method="POST">
                     <td>{{$product->name}}</td>
                     <td>{{$product->price}} €</td>
                     <td>{{$product->discount}}%</td>
-                    <a href="product/{{$product->id}}/" class=" btn btn-dk btn-secondary">Voir l'article</a>
+                    <a href="/product/{{$product->id}}" class=" btn btn-dk btn-secondary">Voir l'article</a>
                     <a href="/backoffice/edit/{{$product->id}}" class=" btn btn-dk btn-secondary">Edit</a>
-                    <a href="backoffice/{{$product->id}}/" class=" btn btn-dk btn-secondary">Delete</a>
-                </form>
+                    <form action="/backoffice/{{$product->id}}" method="POST" onclick="confirm('Êtes vous sûr de vouloir supprimer ce produit ??');">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                        <input type="submit" value="Delete">
+                    </form>
             </div>
         @endforeach
     </div>

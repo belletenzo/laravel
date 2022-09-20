@@ -33,7 +33,7 @@ Route::get('/backoffice',[AdminController::class,'index']);
 Route::get('/backoffice/create', [AdminController::class, 'create']);
 Route::post('/backoffice/add', [AdminController::class, 'store']);
 //Delete Produit :
-Route::get('/backoffice/{id}', [AdminController::class, 'destroy']);
+Route::delete('/backoffice/{id}', [AdminController::class, 'destroy']);
 //Edit Produit :
 Route::get('/backoffice/edit/{id}', [AdminController::class, 'edit']);
 Route::put('/backoffice/edit/{id}',[AdminController::class, 'update']);
