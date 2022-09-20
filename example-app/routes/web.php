@@ -51,6 +51,8 @@ Route::delete('/backoffice/categories/{id}', [CategoriesController::class, 'dest
 
 //Bo Customers :
 Route::get('/backoffice/customers', [CustomersController::class, 'index']);
+Route::get('/backoffice/customers/create', [CustomersController::class, 'create']);
+Route::post('/backoffice/customers/add', [CustomersController::class, 'store']);
 
 // BO Orders :
 Route::get('/backoffice/orders', [OrdersController::class, 'index']);

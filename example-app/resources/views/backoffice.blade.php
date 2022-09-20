@@ -29,9 +29,9 @@
                         <td>{{$product->discount}}%</td>
                         <td>{{$product->weight}}</td>
                         <td>{{$product->quantity}}</td>
-                        <td><a href="/product/{{$product->id}}" class=" btn btn-dk btn-secondary">Voir l'article</a>
+                        <td><a href="/product/{{$product->id}}" class=" btn btn-dk btn-dark">Voir l'article</a>
                         </td>
-                        <td><a href="/backoffice/edit/{{$product->id}}" class=" btn btn-dk btn-secondary">Edit</a></td>
+                        <td><a href="/backoffice/edit/{{$product->id}}" class=" btn btn-dk btn-dark">Edit</a></td>
                         <td>
                             <form style='margin:0' action="/backoffice/{{$product->id}}" method="POST"
                                   onclick="confirm('Êtes vous sûr de vouloir supprimer ce produit ??');">

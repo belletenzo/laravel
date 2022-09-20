@@ -2,6 +2,7 @@
 @section('title', 'Backoffice')
 @section('content')
     <div class="bg-light  border  border-2 container-fluid w-75 mt-4">
+        <a href="/backoffice" class=" btn btn-dk btn-dark">Retour</a>
     <table class="table">
         <tr>
             <td>ID : </td>
@@ -20,6 +21,5 @@
         </tr>
         @endforeach
         </table>
-        <a href="/backoffice" class=" btn btn-dk btn-dark">Retour</a>
     </div>
 @endsection
