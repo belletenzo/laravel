@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,13 +30,27 @@ Route::get('/productascprice', [ProductController::class, 'productListOrderByAsc
 Route::get('/product/{id}', [ProductController::class, 'detailedProduct']);
 //Panier :
 Route::get('/cart', [CartController::class, 'displayCart']);
+
 //Page d'accueil Bo :
 Route::get('/backoffice',[AdminController::class,'index']);
-//Ajouter Produit :
+
+//Bo Product :
 Route::get('/backoffice/create', [AdminController::class, 'create']);
 Route::post('/backoffice/add', [AdminController::class, 'store']);
-//Delete Produit :
 Route::delete('/backoffice/{id}', [AdminController::class, 'destroy']);
-//Edit Produit :
 Route::get('/backoffice/edit/{id}', [AdminController::class, 'edit']);
 Route::put('/backoffice/edit/{id}',[AdminController::class, 'update']);
+
+//Bo Categories :
+Route::get('/backoffice/categories',[CategoriesController::class, 'index']);
+Route::get('/backoffice/categories/create',[CategoriesController::class, 'create']);
+Route::post('/backoffice/categories/add', [CategoriesController::class, 'store']);
+Route::get('/backoffice/categories/edit/{id}',[CategoriesController::class, 'edit']);
+Route::put('/backoffice/categories/edit/{id}',[CategoriesController::class, 'update']);
+Route::delete('/backoffice/categories/{id}', [CategoriesController::class, 'destroy']);
+
+//Bo Customers :
+Route::get('/backoffice/customers', [CustomersController::class, 'index']);
+
+// BO Orders :
+Route::get('/backoffice/orders', [OrdersController::class, 'index']);

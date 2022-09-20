@@ -1,20 +1,20 @@
 @extends('layout')
 @section('content')
+    <div class="bg-light  border  border-2 container-fluid w-75 mt-4">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title">Modifier un article</h2>
+            <h2 class="panel-title">Ajouter un article</h2>
         </div>
         <div class="panel-body">
-            <form class="" action="/backoffice/edit/{{$product->id}}" method="POST">
+            <form class="" action="/backoffice/add" method="POST">
                 {{ csrf_field() }}
-                @method('PUT')
                 <div class="form-group">
                     <label for="name">Nom :</label>
-                    <input type="text" class="form-control" name="name" value="{{$product->name}}" id="name" placeholder="name">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="name">
                 </div>
                 <div class="form-group">
                     <label for="category_id">Category ID :</label>
-                    <select name="category_id" value="{{$product->category_id}}">
+                    <select name="category_id">
                         <option value="1">Tech</option>
                         <option value="2">Electroménager</option>
                         <option value="3">Hygiène</option>
@@ -23,32 +23,32 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description :</label>
-                    <input type="text" class="form-control" name="description" value="{{$product->description}}" id="description"
+                    <input type="text" class="form-control" name="description" id="description"
                            placeholder="description">
                 </div>
                 <div class="form-group">
                     <label for="image">Image :</label>
-                    <input type="text" class="form-control" name="image" value="{{$product->image}}" id="image" placeholder="image">
+                    <input type="text" class="form-control" name="image" id="image" placeholder="image">
                 </div>
                 <div class="form-group">
                     <label for="price">Prix :</label>
-                    <input type="text" class="form-control" name="price" value="{{$product->price}}" id="price" placeholder="price">
+                    <input type="text" class="form-control" name="price" id="price" placeholder="price">
                 </div>
                 <div class="form-group">
                     <label for="weight">Poids :</label>
-                    <input type="text" class="form-control" name="weight" value="{{$product->weight}}" id="weight" placeholder="weight">
+                    <input type="text" class="form-control" name="weight" id="weight" placeholder="weight">
                 </div>
                 <div class="form-group">
                     <label for="quantity">Stock :</label>
-                    <input type="text" class="form-control" name="quantity" value="{{$product->quantity}}" id="quantity" placeholder="quantity">
+                    <input type="text" class="form-control" name="quantity" id="quantity" placeholder="quantity">
                 </div>
                 <div class="form-group">
                     <label for="discount">Promo :</label>
-                    <input type="text" class="form-control" name="discount" value="{{$product->discount}}" id="discount" placeholder="discount">
+                    <input type="text" class="form-control" name="discount" id="discount" placeholder="discount">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
-
+    </div>
 @endsection

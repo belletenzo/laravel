@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function create()
     {
-        return view('backoffice.backoffice-create');
+        return view('backoffice.products.create');
     }
 
 
@@ -33,7 +33,7 @@ class AdminController extends Controller
         $product->quantity = $request->quantity;
         $product->discount = $request->discount;
         $product->save();
-        return view('backoffice.result', $product);
+        return view('backoffice.products.result', $product);
     }
 
 
@@ -46,7 +46,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('backoffice.backoffice-edit', compact('product'));
+        return view('backoffice.products.edit', compact('product'));
     }
 
 
