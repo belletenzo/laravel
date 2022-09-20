@@ -12,6 +12,8 @@
             <td>Adresse :</td>
             <td>Code Postal :</td>
             <td>Ville :</td>
+            <td></td>
+            <td></td>
         </tr>
     @foreach($customers as $customer)
         <tr>
@@ -21,6 +23,13 @@
         <td>{{$customer->adress}}</td>
         <td>{{$customer->postal_code}}</td>
         <td>{{$customer->city}}</td>
+            <td></td>
+            <td><form style='margin:0' action="/backoffice/customers/{{$customer->id}}" method="POST"
+                      onclick="confirm('Êtes vous sûr de vouloir supprimer ce client ??');">
+                    {{csrf_field()}}
+                    {{method_field('DELETE')}}
+                    <input type="submit" value="Delete">
+                </form></td>
         </tr>
         @endforeach
     </table>
