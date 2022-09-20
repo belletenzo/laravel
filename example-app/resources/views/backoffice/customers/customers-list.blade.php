@@ -20,7 +20,7 @@
         <td>{{$customer->id}}</td>
         <td>{{$customer->first_name}}</td>
         <td>{{$customer->last_name}}</td>
-        <td>{{$customer->adress}}</td>
+        <td>{{$customer->address}}</td>
         <td>{{$customer->postal_code}}</td>
         <td>{{$customer->city}}</td>
             <td></td>
