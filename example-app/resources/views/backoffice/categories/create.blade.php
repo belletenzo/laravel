@@ -6,7 +6,7 @@
                 <h2 class="panel-title">Ajouter une catégorie</h2>
             </div>
             <div class="panel-body">
-                <form class="" action="/backoffice/categories/add" method="POST">
+                <form class="" action="{{route('categories.store')}}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name">Nom de la catégorie :</label>

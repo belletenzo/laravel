@@ -1,7 +1,6 @@
 @extends('layout')
 @section('title', 'Article')
 @section('content')
-    @dump($productById)
     <div class="container-fluid w-50 mt-4">
 <h1>Fiche du produit </h1>
 <div class="col-lg-3 col-md-6 col-sm-6">

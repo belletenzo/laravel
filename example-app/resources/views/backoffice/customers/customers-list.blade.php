@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-light  border  border-2 container-fluid w-75 mt-4">
         <a href="/backoffice" class=" btn btn-dk btn-dark">Retour</a>
-        <a href="/backoffice/customers/create" class=" btn btn-dk btn-danger">Ajouter un client</a>
+        <a href="{{route('customers.create')}}" class=" btn btn-dk btn-danger">Ajouter un client</a>
     <table class="table">
         <tr>
             <td>Id :</td>
@@ -23,8 +23,8 @@
         <td>{{$customer->address}}</td>
         <td>{{$customer->postal_code}}</td>
         <td>{{$customer->city}}</td>
-            <td></td>
-            <td><form style='margin:0' action="/backoffice/customers/{{$customer->id}}" method="POST"
+            <td><a href="{{route('customers.edit',['customer' => $customer])}}" class="btn btn-dk btn-dark">Edit</a></td>
+            <td><form style='margin:0' action="{{route('customers.destroy',['customer' => $customer])}}" method="POST"
                       onclick="confirm('Êtes vous sûr de vouloir supprimer ce client ??');">
                     {{csrf_field()}}
                     {{method_field('DELETE')}}

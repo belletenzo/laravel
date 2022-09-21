@@ -6,7 +6,7 @@
             <h2 class="panel-title">Ajouter un article</h2>
         </div>
         <div class="panel-body">
-            <form class="" action="/backoffice/add" method="POST">
+            <form class="" action="{{route('products.store')}}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">Nom :</label>

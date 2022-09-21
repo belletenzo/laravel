@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backoffice;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->name = $request->name;
         $category->save();
-        return view('backoffice.categories.result', $category);
+        return redirect('backoffice/categories');
     }
 
 
@@ -36,19 +37,17 @@ class CategoriesController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $category = Category::find($id);
-        return view('backoffice.categories.edit', compact('category'));
+        return view('backoffice.categories.edit', ['category'=>$category]);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        $category = Category::find($id);
         $category->name = $request->input('name');
         $category->update();
-        return redirect('/backoffice/categories');
+        return redirect('backoffice/categories');
     }
 
 

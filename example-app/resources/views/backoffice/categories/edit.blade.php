@@ -6,7 +6,7 @@
                 <h2 class="panel-title">Modifier une catégorie</h2>
             </div>
             <div class="panel-body">
-                <form class="" action="/backoffice/categories/edit/{{$category->id}}" method="POST">
+                <form class="" action="{{route('categories.update', ['category' => $category])}}" method="POST">
                     {{ csrf_field() }}
                     @method('PUT')
                     <div class="form-group">

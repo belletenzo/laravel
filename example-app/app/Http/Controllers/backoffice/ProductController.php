@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backoffice;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ProductController extends Controller
 {
 
     public function index()
     {
         $products = Product::all();
-        return view('backoffice', ['products' => $products]);
+        return view('backoffice.products.products-list', ['products' => $products]);
     }
 
 
@@ -33,7 +35,7 @@ class AdminController extends Controller
         $product->quantity = $request->quantity;
         $product->discount = $request->discount;
         $product->save();
-        return view('backoffice.products.result', $product);
+        return redirect('backoffice/products');
     }
 
 
@@ -43,16 +45,15 @@ class AdminController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Product $product)
     {
-        $product = Product::find($id);
         return view('backoffice.products.edit', compact('product'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        $product = Product::find($id);
+
         $product->name = $request->input('name');
         $product->category_id = $request->input('category_id');
         $product->description = $request->input('description');
@@ -62,14 +63,13 @@ class AdminController extends Controller
         $product->quantity = $request->input('quantity');
         $product->discount = $request->input('discount');
         $product->update();
-        return redirect('/backoffice');
+        return redirect('/backoffice/products');
     }
 
 
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        $product = Product::find($id);
         $product->delete();
-        return redirect('/backoffice');
+        return redirect('/backoffice/products');
     }
 }

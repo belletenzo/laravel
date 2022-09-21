@@ -6,7 +6,7 @@
                 <h2 class="panel-title">Ajouter un client</h2>
             </div>
             <div class="panel-body">
-                <form class="" action="/backoffice/customers/add" method="POST">
+                <form class="" action="{{route('customers.store')}}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="first_name">Prenom :</label>

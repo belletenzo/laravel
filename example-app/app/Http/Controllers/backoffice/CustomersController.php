@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backoffice;
 
+use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class CustomersController extends Controller
         $customer->postal_code = $request->postal_code;
         $customer->city = $request->city;
         $customer->save();
-        Return redirect('/backoffice/customers');
+        Return redirect('backoffice/customers');
     }
 
 
@@ -40,21 +41,27 @@ class CustomersController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Customer $customer)
     {
-        //
+        return view('backoffice.customers.edit', ['customer'=>$customer]);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Customer $customer)
     {
-        //
+
+        $customer->first_name = $request->input('first_name');
+        $customer->last_name = $request->input('last_name');
+        $customer->address = $request->input('address');
+        $customer->postal_code = $request->input('postal_code');
+        $customer->city = $request->input('city');
+        $customer->update();
+        return redirect('backoffice/customers');
     }
 
 
-    public function destroy($id)
+    public function destroy(Customer $customer)
     {
-        $customer = Customer::find($id);
         $customer->delete();
         return redirect('/backoffice/customers');
     }
