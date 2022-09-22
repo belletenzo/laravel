@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('backoffice.products.products-list', ['products' => $products]);
+        return view('backoffice.products.index', ['products' => $products]);
     }
 
 

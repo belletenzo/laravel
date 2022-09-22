@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\backoffice\BackOfficeController;
 use App\Http\Controllers\backoffice\ProductController as BackOfficeProductController;
-use App\Http\Controllers\backoffice\CategoriesController;
-use App\Http\Controllers\backoffice\CustomersController;
+use App\Http\Controllers\backoffice\CategoryController;
+use App\Http\Controllers\backoffice\CustomerController;
 use App\Http\Controllers\backoffice\OrderController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
@@ -31,10 +31,9 @@ Route::get('/productascprice', [ProductController::class, 'productListOrderByAsc
 Route::get('/product/{id}', [ProductController::class, 'show']);
 //Panier :
 Route::get('/cart', [CartController::class, 'displayCart']);
-
 //Bo
 Route::get('backoffice', [BackOfficeController::class, 'index']);
 Route::resource('backoffice/products', BackOfficeProductController::class);
-Route::resource('backoffice/categories', CategoriesController::class);
-Route::resource('backoffice/customers', CustomersController::class);
+Route::resource('backoffice/categories', CategoryController::class);
+Route::resource('backoffice/customers', CustomerController::class);
 Route::resource('backoffice/orders', OrderController::class);

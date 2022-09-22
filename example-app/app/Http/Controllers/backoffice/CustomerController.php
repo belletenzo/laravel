@@ -6,13 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class CustomersController extends Controller
+class CustomerController extends Controller
 {
 
     public function index()
     {
         $customers = Customer::all();
-        return view('backoffice.customers.customers-list', compact('customers'));
+        return view('backoffice.customers.index', compact('customers'));
     }
 
 

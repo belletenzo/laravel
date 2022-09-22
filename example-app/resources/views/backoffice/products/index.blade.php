@@ -8,6 +8,7 @@
             <tr>
                 <td>ID :</td>
                 <td>Name :</td>
+                <td>Category :</td>
                 <td>Prix :</td>
                 <td>Promo :</td>
                 <td>Poids :</td>
@@ -21,6 +22,7 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td>{{$product->name}}</td>
+                    <td>{{$product->category->name}}</td>
                     <td>{{$product->price}} €</td>
                     <td>{{$product->discount}}%</td>
                     <td>{{$product->weight}}</td>

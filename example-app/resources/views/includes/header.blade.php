@@ -21,16 +21,16 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="product">Listes des Articles</a>
+                    <a class="nav-link" href="/product">Listes des Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/backoffice">Back-Office</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">XXXXXX</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">XXXXXX</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart">Mon Panier</a>
+                    <a class="nav-link" href="/cart">Mon Panier</a>
                 </li>
             </ul>
             <!-- Left links -->

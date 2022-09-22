@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -16,14 +17,17 @@ class ProductController extends Controller
 
     public function productListOrderByName(){
 
-        $products = Product::orderBy('name')->get();
-        return view('product-list',['products' => $products]);
+        $products = DB::table('products')
+            ->orderByRaw('name')
+            ->get();
+
+        return view('products-list',['products' => $products]);
     }
 
     public function productListOrderByAscPrice(){
 
-        $products = Product::orderBy('price','asc')->get();
-        return view('product-list',['products' => $products]);
+        $products = Product::orderBy('price', 'ASC')->get();
+        return view('products-list',['products' => $products]);
     }
 
     public function create()
