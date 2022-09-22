@@ -19,6 +19,13 @@
                                     <p>Promo : {{$product->discount}}%</p>
                                     <a href="product/{{$product->id}}/" class=" btn btn-dk btn-secondary">Voir
                                         l'article</a>
+                                <form action="cart/{{$product->id}}" method="post">
+                                    @csrf
+                                    <label for="quantity">
+                                        <input type="number" value="1" name="quantity" class="form-control" style="width:180px">
+                                    </label>
+                                    <input class="btn btn-danger" type="submit" value="Ajouter au panier">
+                                </form>
                             </div>
                         </div>
                         <img src="{{$product->image}}" alt="" class="w-100 img-fluid">

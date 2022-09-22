@@ -2,9 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class CartController extends Controller
 {
-    public function displayCart(){
+
+    public function index()
+    {
+
+    }
+
+
+    public function create()
+    {
+        //
+    }
+
+
+    public function store(Request $request)
+    {
+
         return view("cart");
+    }
+
+
+    public function show($id)
+    {
+
+    }
+
+
+    public function edit($id)
+    {
+        //
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+
+    public function destroy($id)
+    {
+        //
     }
 }

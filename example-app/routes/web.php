@@ -30,7 +30,7 @@ Route::get('/productascprice', [ProductController::class, 'productListOrderByAsc
 //Produit detaillé :
 Route::get('/product/{id}', [ProductController::class, 'show']);
 //Panier :
-Route::get('/cart', [CartController::class, 'displayCart']);
+Route::post('/cart/{id}', [CartController::class, 'store']);
 //Bo
 Route::get('backoffice', [BackOfficeController::class, 'index']);
 Route::resource('backoffice/products', BackOfficeProductController::class);
