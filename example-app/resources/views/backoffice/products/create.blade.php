@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
     <div class="bg-light  border  border-2 container-fluid w-75 mt-4">
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+                <li class="text-red-500 list-none">
+                    {{$error}}
+                </li>
+            @endforeach
+        @endif
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">Ajouter un article</h2>

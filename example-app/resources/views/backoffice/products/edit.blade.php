@@ -6,6 +6,13 @@
             <h2 class="panel-title">Modifier un article</h2>
         </div>
         <div class="panel-body">
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    <li class="text-red-500 list-none">
+                        {{$error}}
+                    </li>
+                @endforeach
+            @endif
             <form class="" action="{{route('products.update', ['product'=>$product])}}" method="POST">
                 {{ csrf_field() }}
                 @method('PUT')
