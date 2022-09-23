@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -21,14 +23,19 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
-
-        return view("cart");
+        $product = Product::findOrFail($request->input('product_id'));
+        $quantity = $request->input('quantity');
+        if ($quantity > $product->quantity) {
+            return redirect('/product')->with('error','Pas assez de produit en stock');
+        } else {
+            return view('cart', compact('product'), compact('quantity'));
+        }
     }
 
 
     public function show($id)
     {
-
+        //
     }
 
 

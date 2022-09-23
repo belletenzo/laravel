@@ -5,8 +5,12 @@
     <div class="container-fluid w-75 mt-4">
         <a href="productname" class=" btn btn-dk btn-secondary">Trier par nom</a>
         <a href="productascprice" class=" btn btn-dk btn-secondary">Trier par prix croissant</a>
-        <a href="product" class=" btn btn-dk btn-secondary">Par défaut</a>
-
+        <a href="/product" class=" btn btn-dk btn-secondary">Par défaut</a>
+        @if(session('error'))
+                <li class="text-red-500 list-none">
+                    {{session('error')}}
+                </li>
+        @endif
         <div class="row">
             @foreach($products as $product)
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -22,6 +26,7 @@
                                 <form action="cart/{{$product->id}}" method="post">
                                     @csrf
                                     <label for="quantity">
+                                        <input type="hidden" name="product_id" value="{{$product->id}}">
                                         <input type="number" value="1" name="quantity" class="form-control" style="width:180px">
                                     </label>
                                     <input class="btn btn-danger" type="submit" value="Ajouter au panier">
